@@ -4,7 +4,7 @@ import json
 import os
 import hashlib
 
-API_KEY = "your_actual_api_key_here"
+API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=API_KEY)
 USERS_FILE = "users.json"
 
