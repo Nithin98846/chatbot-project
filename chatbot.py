@@ -3,11 +3,11 @@ from groq import Groq
 import json
 import os
 import hashlib
-
+import streamlit.components.v1 as components
 
 GA_ID = "G-EXJRS48ZT3"
 
-st.markdown(f"""
+components.html(f"""
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>
@@ -16,7 +16,7 @@ function gtag(){{dataLayer.push(arguments);}}
 gtag('js', new Date());
 gtag('config', '{GA_ID}');
 </script>
-""", unsafe_allow_html=True)
+""", height=0)
 
 API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=API_KEY)
