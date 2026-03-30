@@ -4,6 +4,20 @@ import json
 import os
 import hashlib
 
+
+GA_ID = "G-EXJRS48ZT3"
+
+st.markdown(f"""
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('js', new Date());
+gtag('config', '{GA_ID}');
+</script>
+""", unsafe_allow_html=True)
+
 API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=API_KEY)
 USERS_FILE = "users.json"
